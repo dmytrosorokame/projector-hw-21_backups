@@ -24,8 +24,8 @@ docker exec -it db_full_backup bash
 
 3. Execute setup scripts:
 
-   - Run [table creation](./data/create.sql)
-   - Run data insertions: [insertion1](./data/insert1.sql), [insertion2](./data/insert2.sql), [insertion3](./data/insert3.sql)
+   - Run [table creation](./sql/create_table.sql)
+   - Run data insertions: [insertion1](./sql/insert1.sql), [insertion2](./sql/insert2.sql), [insertion3](./sql/insert3.sql)
 
 4. Create full backup:
 
@@ -56,8 +56,8 @@ docker-compose -f docker-compose-diff.yaml up
 
 2. Initial setup:
 
-   - Run [create table](./data/create.sql)
-   - Run [insert data](./data/insert1.sql)
+   - Run [create table](./sql/create_table.sql)
+   - Run [insert data](./sql/insert1.sql)
 
 3. Check binary log files:
 
@@ -82,8 +82,8 @@ mysqldump -u root -padmin books --flush-logs > /backup/full.sql
 
 5. Add more data:
 
-   - Run [insert data 2](./data/insert2.sql)
-   - Run [insert data 3](./data/insert3.sql)
+   - Run [insert data 2](./sql/insert2.sql)
+   - Run [insert data 3](./sql/insert3.sql)
 
 6. Create differential backup:
 
