@@ -1,0 +1,18 @@
+services:
+  db_incr_backup:
+    image: mysql:8
+    container_name: db_incr_backup
+    ports:
+      - 3306:3306
+    volumes:
+      - db_volume:/var/lib/mysql
+      - ./backups/incr:/backup
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_USER=admin
+      - MYSQL_DATABASE=books
+      - MYSQL_PASSWORD=admin
+
+volumes:
+  db_volume: {}
